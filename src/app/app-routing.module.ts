@@ -1,10 +1,16 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
 
-const routes: Routes = [];
+const routes: Routes = [
+    {
+        path: '',
+        loadChildren: () => import('./modules/send-message/send-message.module').then(m => m.SendMessageModule),
+    },
+    {
+        path: '**',
+        redirectTo: '',
+    },
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+];
+
+export const appRoutingModule: ModuleWithProviders = RouterModule.forRoot(routes);
