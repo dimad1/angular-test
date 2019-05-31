@@ -6,13 +6,16 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
 import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
-    declarations: [HeaderComponent],
+    declarations: [
+        HeaderComponent
+    ],
     imports: [
         CommonModule,
         MatToolbarModule,
         MatIconModule,
         MatBadgeModule,
         FlexLayoutModule,
+
     ],
     exports: [
         HeaderComponent,
